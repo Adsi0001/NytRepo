@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("NyBinaryConverter")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fb21c940dd93a40cd06e8586ef1b5189fc4271be")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d494e9108e8830b199ac38797801c0473f8d2b45")]
 [assembly: System.Reflection.AssemblyProductAttribute("NyBinaryConverter")]
 [assembly: System.Reflection.AssemblyTitleAttribute("NyBinaryConverter")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

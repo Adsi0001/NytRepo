@@ -67,11 +67,13 @@ namespace BinaryConverter
                             binArr[i] = false; // Sæt false (0)
                         }
                     }
+                    //Tjek alle værdier i binArr for at finde decValue (decimalværdien)
+                    //Hvis værdien er true fordobles decValue og lægger 1 til, da true = 1
+                    //Hvis værdien er false fordobles decValue, og da false = 0 lægger vi ikke noget til
                     int decValue = 0;
 
                     for (int i = 0; i < binArr.Length; i++)
                     {
-                        // Hvis den aktuelle bit er true (1), læg værdien af denne bit til
                         if (binArr[i])
                         {
                             decValue = decValue * 2 + 1;
@@ -104,6 +106,12 @@ namespace BinaryConverter
                         Console.WriteLine("");
                     }
                     else
+                    //Strengen er tom fordi den skal opbygges først
+                    //Hvis decimaltal er lig med 0 er binært tal også
+                    //I while loopet bliver decimalTal inputtet divideret med 2, og det fortsætter så længe decimalTal er større end 0
+                    //Resten af decimalTal er enten 1 eller 0 da det skal være heltal
+                    //Hvis resten er 1, tilføjes 1 i binærtTal, og hvis rester er 0, tilføjes 0.
+                    //Hvis der ikke er 8 cifre tilføjer programmet de manglende 0-taller
                     {
                         string binærtTal = "";
 

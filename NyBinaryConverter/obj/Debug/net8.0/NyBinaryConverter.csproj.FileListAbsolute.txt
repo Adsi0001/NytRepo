@@ -1,0 +1,15 @@
+C:\Users\Adam\Desktop\NytRepo\NyBinaryConverter\bin\Debug\net8.0\NyBinaryConverter.exe
+C:\Users\Adam\Desktop\NytRepo\NyBinaryConverter\bin\Debug\net8.0\NyBinaryConverter.deps.json
+C:\Users\Adam\Desktop\NytRepo\NyBinaryConverter\bin\Debug\net8.0\NyBinaryConverter.runtimeconfig.json
+C:\Users\Adam\Desktop\NytRepo\NyBinaryConverter\bin\Debug\net8.0\NyBinaryConverter.dll
+C:\Users\Adam\Desktop\NytRepo\NyBinaryConverter\bin\Debug\net8.0\NyBinaryConverter.pdb
+C:\Users\Adam\Desktop\NytRepo\NyBinaryConverter\obj\Debug\net8.0\NyBinaryConverter.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Adam\Desktop\NytRepo\NyBinaryConverter\obj\Debug\net8.0\NyBinaryConverter.AssemblyInfoInputs.cache
+C:\Users\Adam\Desktop\NytRepo\NyBinaryConverter\obj\Debug\net8.0\NyBinaryConverter.AssemblyInfo.cs
+C:\Users\Adam\Desktop\NytRepo\NyBinaryConverter\obj\Debug\net8.0\NyBinaryConverter.csproj.CoreCompileInputs.cache
+C:\Users\Adam\Desktop\NytRepo\NyBinaryConverter\obj\Debug\net8.0\NyBinaryConverter.sourcelink.json
+C:\Users\Adam\Desktop\NytRepo\NyBinaryConverter\obj\Debug\net8.0\NyBinaryConverter.dll
+C:\Users\Adam\Desktop\NytRepo\NyBinaryConverter\obj\Debug\net8.0\refint\NyBinaryConverter.dll
+C:\Users\Adam\Desktop\NytRepo\NyBinaryConverter\obj\Debug\net8.0\NyBinaryConverter.pdb
+C:\Users\Adam\Desktop\NytRepo\NyBinaryConverter\obj\Debug\net8.0\NyBinaryConverter.genruntimeconfig.cache
+C:\Users\Adam\Desktop\NytRepo\NyBinaryConverter\obj\Debug\net8.0\ref\NyBinaryConverter.dll
