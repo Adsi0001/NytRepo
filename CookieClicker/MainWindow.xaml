@@ -65,10 +65,9 @@
                 x:Name="ClickerUpgrade"
                 Click="ClickerUpgrade_Click"
                 Height="100"
-                Width="640"
                 Margin="12"
                 VerticalAlignment="Top"
-                HorizontalAlignment="Left">
+                HorizontalAlignment="Stretch">
                 <Label
                     Content="Clicker Upgrade"
                     FontSize="34"
@@ -81,10 +80,9 @@
                 x:Name="AutoClickerUpgrade"
                 Click="AutoClickerUpgrade_Click"
                 Height="100"
-                Width="640"
                 Margin="12"
                 VerticalAlignment="Top"
-                HorizontalAlignment="Left">
+                HorizontalAlignment="Stretch">
                  <Label
                      Content="Auto Clicker Upgrade"
                      FontSize="34"
@@ -97,10 +95,9 @@
                 x:Name="GrandmaUpgrade"
                 Click="GrandmaUpgrade_Click"
                 Height="100"
-                Width="640"
                 Margin="12"
                 VerticalAlignment="Top"
-                HorizontalAlignment="Left">
+                HorizontalAlignment="Stretch">
                 <Label
                     Content="Grandma Upgrade"
                     FontSize="34"
