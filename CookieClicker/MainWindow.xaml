@@ -48,6 +48,12 @@
                 FontWeight="SemiBold"
                 HorizontalAlignment="Center"
                 />
+            <TextBlock
+                x:Name="CookiesPerClickTextBlock"
+                FontSize="32"
+                Text="Cookies per click: 1"
+                HorizontalAlignment="Center"
+                />
         </StackPanel>
         <!-- UpgradeMenu panel -->
         <StackPanel
@@ -60,6 +66,7 @@
                 HorizontalAlignment="Center"
                 FontWeight="Black"
                 />
+            <!-- Clicker Upgrade -->
             <Button
                 x:Name="ClickerUpgrade"
                 Click="ClickerUpgrade_Click"
@@ -67,14 +74,36 @@
                 Margin="12"
                 VerticalAlignment="Top"
                 HorizontalAlignment="Stretch">
-                <Label
-                    Content="Clicker Upgrade"
-                    FontSize="34"
-                    VerticalAlignment="Center"
-                    HorizontalAlignment="Left" Width="570"
-                    FontWeight="SemiBold"
-                    />
+                <StackPanel
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Center">
+                    <Label
+                        Content="Clicker Upgrade "
+                        FontSize="30"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Stretch"
+                        FontWeight="SemiBold"
+                        />
+                    <TextBlock
+                        x:Name="PriceTextBlock"
+                        FontSize="20"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Stretch"
+                        Text="Price: 50 Cookies"
+                        />
+                </StackPanel>
             </Button>
+            <!-- Clicker Upgrade Level -->
+            <TextBlock
+                x:Name="ClickerLevelTextBlock"
+                Margin="20,0"
+                FontSize="24"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Right"
+                Text="Clicker Upgrade Level: 0 "
+                />
+            <!-- AutoClicker Upgrade -->
             <Button
                 x:Name="AutoClickerUpgrade"
                 Click="AutoClickerUpgrade_Click"
@@ -82,29 +111,72 @@
                 Margin="12"
                 VerticalAlignment="Top"
                 HorizontalAlignment="Stretch">
-                 <Label
-                     Content="Auto Clicker Upgrade"
-                     FontSize="34"
-                     VerticalAlignment="Center"
-                     HorizontalAlignment="Left" Width="570"
-                     FontWeight="SemiBold"
-                     />
+                <StackPanel
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Center">
+                    <Label
+                        Content="AutoClicker Upgrade"
+                        FontSize="30"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Stretch"
+                        FontWeight="SemiBold"
+                        />
+                    <TextBlock
+                        x:Name="AutoClickerPriceTextBlock"
+                        Margin="10,0"
+                        FontSize="20"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Stretch"
+                        Text="Price: 500 Cookies"
+                        />
+                </StackPanel>
             </Button>
+            <!-- AutoClicker Upgrade Level -->
+            <TextBlock
+                x:Name="AutoClickerLevelTextBlock"
+                Margin="20,0"
+                FontSize="24"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Right"
+                Text="AutoClicker Upgrade Level: 0 "
+                />
             <Button
-                x:Name="GrandmaUpgrade"
-                Click="GrandmaUpgrade_Click"
+                x:Name="MegaClickUpgrade"
+                Click="MegaClickUpgrade_Click"
                 Height="80"
                 Margin="12"
                 VerticalAlignment="Top"
                 HorizontalAlignment="Stretch">
-                <Label
-                    Content="Grandma Upgrade"
-                    FontSize="34"
-                    VerticalAlignment="Center"
-                    HorizontalAlignment="Left" Width="570"
-                    FontWeight="SemiBold"
-                    />
+                <StackPanel
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Center">
+                    <Label
+                        Content="MegaClick Upgrade"
+                        FontSize="30"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Stretch"
+                        FontWeight="SemiBold"
+                        />
+                    <TextBlock
+                        x:Name="MegaClickerPriceTextBlock"
+                        Margin="10,0"
+                        FontSize="20"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Stretch"
+                        Text="Price: 1000 Cookies"
+                        />
+                </StackPanel>
             </Button>
+            <TextBlock
+                x:Name="MegaClickerLevelTextBlock"
+                Margin="20,0"
+                FontSize="24"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Right"
+                Text="MegaClicker Upgrade Level: 0 "
+                />
         </StackPanel>
         <!-- RandomEvent1 -->
         <StackPanel

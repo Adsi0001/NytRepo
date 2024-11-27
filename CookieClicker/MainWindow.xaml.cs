@@ -17,7 +17,16 @@ namespace CookieClicker
     /// </summary>
     public partial class MainWindow : Window
     {
-        private int cookieCount = 0;
+        private int cookieCount = 10000;
+        private int cookiesPerClick = 1;
+        private int clickerUpgradePrice = 50;
+        private int clickerUpgradeLevel = 0;
+        private int autoClickerUpgradePrice = 500;  // Startpris for AutoClicker upgrade
+        private int autoClickerUpgradeLevel = 0;
+        private DispatcherTimer autoClickerTimer;  // Timer for AutoClicker upgrade
+        private int megaClickerUpgradePrice = 1000;
+        private int megaClickerUpgradeLevel = 0;
+
         // Timere der styrer synligheden af knapperne
         private DispatcherTimer timer1;
         private DispatcherTimer timer2;
@@ -26,6 +35,7 @@ namespace CookieClicker
         private DispatcherTimer visibilityTimer2;
         private DispatcherTimer visibilityTimer3;
 
+        // Timere
         public MainWindow()
         {
             InitializeComponent();
@@ -62,32 +72,104 @@ namespace CookieClicker
             visibilityTimer3 = new DispatcherTimer();
             visibilityTimer3.Interval = TimeSpan.FromSeconds(4);
             visibilityTimer3.Tick += VisibilityTimer3_Tick;
+
+            // Initier autoClickerTimer og sæt intervallet til 1 sekund
+            autoClickerTimer = new DispatcherTimer
+            {
+                Interval = TimeSpan.FromSeconds(1) // Kører hver sekund
+            };
+            autoClickerTimer.Tick += AutoClickerTick;  // Ved hvert "tick" kaldes AutoClickerTick
         }
 
         // CookieClickButton
         private void CookieClickButton_Click(object sender, RoutedEventArgs e)
         {
             // Tilføj cookies
-            cookieCount++;
+            cookieCount += cookiesPerClick;
 
             // Opdater cookie count
             CookieCountTextBlock.Text = $"Cookies: {cookieCount}";
         }
-
-        private void GrandmaUpgrade_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void AutoClickerUpgrade_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void ClickerUpgrade_Click(object sender, RoutedEventArgs e)
         {
+            if (clickerUpgradePrice > cookieCount)
+            {
+                MessageBox.Show("You don't have enough cookies to upgrade.");
+            }
+            else
+            {
+                // Køb upgrade
+                cookieCount -= clickerUpgradePrice; // Træk prisen fra cookieCount
+                clickerUpgradePrice *= 2; // Fordobling af prisen på clickerUpgrade
+                cookiesPerClick *= 2;
+                clickerUpgradeLevel ++;
+
+                // Opdater UI med ny pris
+                PriceTextBlock.Text = $"Price: {clickerUpgradePrice} Cookies";
+
+                // Opdaterer UI
+                CookieCountTextBlock.Text = $"Cookies: {cookieCount}";
+                CookiesPerClickTextBlock.Text = $"Cookies per Click: {cookiesPerClick}";
+                ClickerLevelTextBlock.Text = $"Clicker Upgrade Level: {clickerUpgradeLevel}";
+            }
 
         }
+        private void AutoClickerUpgrade_Click(object sender, RoutedEventArgs e)
+        {
+            if (cookieCount < autoClickerUpgradePrice)
+            {
+                MessageBox.Show("Not enough cookies for AutoClicker Upgrade!");
+            }
+            else
+            {
+                cookieCount -= autoClickerUpgradePrice;
+                autoClickerUpgradePrice *= 2;  // Fordobling af prisen ved køb
+                autoClickerUpgradeLevel++;  // Øg niveauet af opgraderinger
+
+                // Start autoClickerTimer hvis ikke allerede startet
+                if (!autoClickerTimer.IsEnabled)
+                {
+                    autoClickerTimer.Start();
+                }
+
+                // Opdater UI
+                AutoClickerPriceTextBlock.Text = $"Price: {autoClickerUpgradePrice} Cookies";
+                CookieCountTextBlock.Text = $"Cookies: {cookieCount}";
+                AutoClickerLevelTextBlock.Text = $"AutoClicker Upgrade Level: {autoClickerUpgradeLevel}";
+
+                // Opdater antallet af klik per sekund baseret på opgraderingsniveau
+                autoClickerTimer.Interval = TimeSpan.FromSeconds(1.0 / autoClickerUpgradeLevel);
+            }
+
+        }
+
+        // AutoClicker timer
+        private void AutoClickerTick(object sender, EventArgs e)
+        {
+            // Tilføj cookies udfra autoClickerUpgradeLevel
+            cookieCount += autoClickerUpgradeLevel;
+            CookieCountTextBlock.Text = $"Cookies: {cookieCount}";
+        }
+        private void MegaClickUpgrade_Click(object sender, RoutedEventArgs e)
+        {
+            if (megaClickerUpgradePrice > cookieCount)
+            {
+                MessageBox.Show("You don't have enough cookies to upgrade.");
+            }
+            else
+            {
+                cookieCount -= megaClickerUpgradePrice;
+                cookiesPerClick += 20;
+                megaClickerUpgradePrice *= 2; // Dobbelt pris
+                megaClickerUpgradeLevel ++;
+            }
+
+            CookieCountTextBlock.Text = $"Cookies: {cookieCount}";
+            MegaClickerPriceTextBlock.Text = $"Price: {megaClickerUpgradePrice} Cookies";
+            CookiesPerClickTextBlock.Text = $"Cookies per Click: {cookiesPerClick}";
+            MegaClickerLevelTextBlock.Text = $"MegaClicker Upgrade Level: {megaClickerUpgradeLevel}";
+        }
+
         // EventTimer1
         private void Timer1_Tick(object sender, EventArgs e)
         {
