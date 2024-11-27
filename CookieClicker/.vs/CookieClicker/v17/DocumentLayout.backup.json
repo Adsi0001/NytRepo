@@ -18,12 +18,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{26341fe2-71dd-46fd-bb1b-2e51a92a0d64}"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -44,7 +40,7 @@
               "RelativeDocumentMoniker": "MainWindow.xaml.cs",
               "ToolTip": "C:\\Users\\Adam\\Desktop\\NytRepo\\CookieClicker\\MainWindow.xaml.cs",
               "RelativeToolTip": "MainWindow.xaml.cs",
-              "ViewState": "AgIAAB0AAAAAAAAAAAAuwB8AAAAjAAAAAAAAAA==",
+              "ViewState": "AgIAAJUAAAAAAAAAAAAAwC4AAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-26T06:41:24.698Z",
               "EditorCaption": ""

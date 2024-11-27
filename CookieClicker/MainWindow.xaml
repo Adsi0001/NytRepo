@@ -17,6 +17,7 @@
             <RowDefinition Height="5*"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
+        <!-- Main Cookie panel -->
         <StackPanel
             Grid.Row="1"
             Grid.Column="1"
@@ -24,8 +25,7 @@
             <Label Content="Click the cookie to bake more cookies!"
                    HorizontalAlignment="Center"
                    FontSize="40"
-                   FontWeight="Bold"
-                   />
+                   FontWeight="Bold"/>
             <Button
                 x:Name="CookieClickButton"
                 Click="CookieClickButton_Click"
@@ -50,37 +50,109 @@
                 HorizontalAlignment="Center"
                 />
         </StackPanel>
+        <!-- UpgradeMenu panel -->
         <StackPanel
             Grid.Column="2"
             Grid.Row="1">
             <Label
                 Content="UPGRADES"
-                FontSize="30"
+                FontFamily="Roboco"
+                FontSize="48"
+                HorizontalAlignment="Center"
+                FontWeight="Black"
                 />
             <Button
                 x:Name="ClickerUpgrade"
                 Click="ClickerUpgrade_Click"
                 Height="100"
                 Width="640"
+                Margin="12"
                 VerticalAlignment="Top"
-                HorizontalAlignment="Left"
-                />
+                HorizontalAlignment="Left">
+                <Label
+                    Content="Clicker Upgrade"
+                    FontSize="34"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Left" Width="570"
+                    FontWeight="SemiBold"
+                    />
+            </Button>
             <Button
                 x:Name="AutoClickerUpgrade"
                 Click="AutoClickerUpgrade_Click"
                 Height="100"
                 Width="640"
+                Margin="12"
                 VerticalAlignment="Top"
-                HorizontalAlignment="Left"
-                />
+                HorizontalAlignment="Left">
+                 <Label
+                     Content="Auto Clicker Upgrade"
+                     FontSize="34"
+                     VerticalAlignment="Center"
+                     HorizontalAlignment="Left" Width="570"
+                     FontWeight="SemiBold"
+                     />
+            </Button>
             <Button
                 x:Name="GrandmaUpgrade"
                 Click="GrandmaUpgrade_Click"
                 Height="100"
                 Width="640"
+                Margin="12"
                 VerticalAlignment="Top"
-                HorizontalAlignment="Left"
-                />
+                HorizontalAlignment="Left">
+                <Label
+                    Content="Grandma Upgrade"
+                    FontSize="34"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Left" Width="570"
+                    FontWeight="SemiBold"
+                    />
+            </Button>
+        </StackPanel>
+        <!-- RandomEvent1 -->
+        <StackPanel
+            Grid.Row="1"
+            Grid.Column="0"
+            VerticalAlignment="Bottom"
+            Grid.ColumnSpan="2">
+            <Button
+                x:Name="RandomEvent1"
+                Click="RandomEvent1_Click"
+                Content="Klik mig!"
+                Width="80"
+                Height="80"
+                Visibility="Collapsed"/>
+        </StackPanel>
+        <!-- RandomEvent2 -->
+        <StackPanel
+            Grid.Row="0"
+            Grid.Column="1"
+            Grid.ColumnSpan="1"
+            VerticalAlignment="Bottom"
+            HorizontalAlignment="Right">
+            <Button
+                x:Name="RandomEvent2"
+                Click="RandomEvent2_Click"
+                Content="Klik mig!"
+                Width="80"
+                Height="80"                
+                Visibility="Collapsed"/>                        
+        </StackPanel>
+        <!-- RandomEvent3 -->
+        <StackPanel
+            Grid.Row="1"
+            Grid.Column="0"
+            Grid.ColumnSpan="1"
+            VerticalAlignment="Top"
+            HorizontalAlignment="Right">
+            <Button
+                x:Name="RandomEvent3"
+                Click="RandomEvent3_Click"
+                Content="Klik mig!"
+                Width="80"
+                Height="80"
+                Visibility="Collapsed"/>
         </StackPanel>
     </Grid>
 </Window>
