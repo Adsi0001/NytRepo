@@ -29,9 +29,8 @@
             <Button
                 x:Name="CookieClickButton"
                 Click="CookieClickButton_Click"
-                Height="420"
-                Width="610"
-                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch"
+                HorizontalAlignment="Center"
                 BorderThickness="0" 
                 BorderBrush="Transparent">
                 <Button.Content>
@@ -64,7 +63,7 @@
             <Button
                 x:Name="ClickerUpgrade"
                 Click="ClickerUpgrade_Click"
-                Height="100"
+                Height="80"
                 Margin="12"
                 VerticalAlignment="Top"
                 HorizontalAlignment="Stretch">
@@ -79,7 +78,7 @@
             <Button
                 x:Name="AutoClickerUpgrade"
                 Click="AutoClickerUpgrade_Click"
-                Height="100"
+                Height="80"
                 Margin="12"
                 VerticalAlignment="Top"
                 HorizontalAlignment="Stretch">
@@ -94,7 +93,7 @@
             <Button
                 x:Name="GrandmaUpgrade"
                 Click="GrandmaUpgrade_Click"
-                Height="100"
+                Height="80"
                 Margin="12"
                 VerticalAlignment="Top"
                 HorizontalAlignment="Stretch">
