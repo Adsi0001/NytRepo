@@ -9,8 +9,11 @@
 //------------------------------------------------------------------------------
 
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("assets/cookie.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("assets/cookie2.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("assets/cookiebackground.jpg")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("assets/goldcookie.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("assets/rottencookie.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("assets/smileycookie.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("assets/totalcookies.png")]
 
 

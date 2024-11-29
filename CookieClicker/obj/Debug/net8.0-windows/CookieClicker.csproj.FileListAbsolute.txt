@@ -24,3 +24,6 @@ C:\Users\Adam\Desktop\NytRepo\CookieClicker\obj\Debug\net8.0-windows\ref\CookieC
 C:\Users\Adam\Desktop\NytRepo\CookieClicker\bin\Debug\net8.0-windows\Assets\GoldCookie.png
 C:\Users\Adam\Desktop\NytRepo\CookieClicker\bin\Debug\net8.0-windows\Assets\RottenCookie.png
 C:\Users\Adam\Desktop\NytRepo\CookieClicker\bin\Debug\net8.0-windows\Assets\SmileyCookie.png
+C:\Users\Adam\Desktop\NytRepo\CookieClicker\bin\Debug\net8.0-windows\Assets\TotalCookies.png
+C:\Users\Adam\Desktop\NytRepo\CookieClicker\bin\Debug\net8.0-windows\Assets\Cookie2.png
+C:\Users\Adam\Desktop\NytRepo\CookieClicker\bin\Debug\net8.0-windows\Assets\CookieBackground.jpg

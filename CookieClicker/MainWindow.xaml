@@ -7,6 +7,9 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="1080" Width="1920">
     <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Assets/CookieBackground.jpg" Stretch="UniformToFill"/>
+        </Grid.Background>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="5*"/>
@@ -17,15 +20,44 @@
             <RowDefinition Height="5*"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
-        <!-- Main Cookie panel -->
+        <!-- Button der viser totalCookies klikket -->
+        <Button
+            Grid.Column="2"
+            Grid.Row="0"
+            Width="400"
+            Click="TotalCookiesBTN_Click"
+            Margin="12"
+            >
+            <Button.Content>
+                <Image
+                    VerticalAlignment="Stretch"
+                    HorizontalAlignment="Stretch">
+                    <Image.Source>
+                        <BitmapImage UriSource="Assets/TotalCookies.png"/>
+                    </Image.Source>
+                </Image>
+            </Button.Content>
+        </Button>
+        <!-- totalCookies -->
+        <TextBlock
+                x:Name="TotalCookiesTextBlock"
+                Visibility="Collapsed"/>
+        <!-- Overskrift -->
+        <Label
+            Grid.Column="1"
+            Grid.Row="0"
+            Content="Click the cookie to bake more cookies!"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Background="LightGray"
+            FontSize="40"
+            FontWeight="Bold"
+               />
+         <!-- Main Cookie panel -->
         <StackPanel
             Grid.Row="1"
             Grid.Column="1"
-            Grid.RowSpan="2">
-            <Label Content="Click the cookie to bake more cookies!"
-                   HorizontalAlignment="Center"
-                   FontSize="40"
-                   FontWeight="Bold"/>
+            Grid.RowSpan="1">
             <Button
                 x:Name="CookieClickButton"
                 Click="CookieClickButton_Click"
@@ -36,7 +68,7 @@
                 <Button.Content>
                     <Image Height="420">
                         <Image.Source>
-                            <BitmapImage UriSource="Assets/Cookie.jpg" />
+                            <BitmapImage UriSource="Assets/Cookie2.png" />
                         </Image.Source>
                     </Image>
                 </Button.Content>
@@ -44,6 +76,7 @@
             <TextBlock
                 x:Name="CookieCountTextBlock"
                 FontSize="40"
+                Background="LightGray"
                 Text="Cookies: 0"
                 FontWeight="SemiBold"
                 HorizontalAlignment="Center"
@@ -51,6 +84,7 @@
             <TextBlock
                 x:Name="CookiesPerClickTextBlock"
                 FontSize="32"
+                Background="LightGray"
                 Text="Cookies per click: 1"
                 HorizontalAlignment="Center"
                 />
@@ -62,6 +96,7 @@
             <Label
                 Content="UPGRADES"
                 FontFamily="Roboco"
+                Background="LightGray"
                 FontSize="48"
                 HorizontalAlignment="Center"
                 FontWeight="Black"
@@ -99,6 +134,7 @@
                 x:Name="ClickerLevelTextBlock"
                 Margin="20,0"
                 FontSize="24"
+                Background="LightGray"
                 VerticalAlignment="Center"
                 HorizontalAlignment="Right"
                 Text="Clicker Upgrade Level: 0 "
@@ -137,6 +173,7 @@
                 x:Name="AutoClickerLevelTextBlock"
                 Margin="20,0"
                 FontSize="24"
+                Background="LightGray"
                 VerticalAlignment="Center"
                 HorizontalAlignment="Right"
                 Text="AutoClicker Upgrade Level: 0 "
@@ -173,6 +210,7 @@
                 x:Name="MegaClickerLevelTextBlock"
                 Margin="20,0"
                 FontSize="24"
+                Background="LightGray"
                 VerticalAlignment="Center"
                 HorizontalAlignment="Right"
                 Text="MegaClicker Upgrade Level: 0 "
@@ -223,7 +261,7 @@
         </StackPanel>
         <!-- RandomEvent3 -->
         <StackPanel
-            Grid.Row="1"
+            Grid.Row="0"
             Grid.Column="0"
             Grid.ColumnSpan="1"
             VerticalAlignment="Top">
@@ -242,5 +280,28 @@
                 </Button.Content>
             </Button>
         </StackPanel>
+        <!-- Log over upgrades -->
+        <ScrollViewer
+            VerticalScrollBarVisibility="Visible"
+            Grid.Row="1"
+            Grid.Column="0">
+            <ListBox 
+                x:Name="EventLog" 
+                FontSize="20">
+            </ListBox>
+        </ScrollViewer>
+        <!-- Stats -->
+        <!-- Level display -->
+        <TextBlock
+            x:Name="LevelText"
+            Text="Level: 1"
+            FontSize="48"
+            FontWeight="SemiBold"
+            Background="LightGray"
+            Grid.Column="2"
+            Grid.Row="2"
+            VerticalAlignment="Top"            
+            HorizontalAlignment="Center"
+           />
     </Grid>
 </Window>

@@ -18,6 +18,7 @@ namespace CookieClicker
     public partial class MainWindow : Window
     {
         private int cookieCount = 0;
+        private int totalCookies = 0;
         private int cookiesPerClick = 1;
         private int clickerUpgradePrice = 50;
         private int clickerUpgradeLevel = 0;
@@ -26,6 +27,7 @@ namespace CookieClicker
         private DispatcherTimer autoClickerTimer;  // Timer for AutoClicker upgrade
         private int megaClickerUpgradePrice = 1000;
         private int megaClickerUpgradeLevel = 0;
+        private int level = 1;
 
         // Timere der styrer synligheden af knapperne
         private DispatcherTimer timer1;
@@ -86,15 +88,19 @@ namespace CookieClicker
         {
             // Tilføj cookies
             cookieCount += cookiesPerClick;
+            totalCookies += cookiesPerClick;
+            CheckLevelUp();
 
             // Opdater cookie count
             CookieCountTextBlock.Text = $"Cookies: {cookieCount}";
+            TotalCookiesTextBlock.Text = $"Total Cookies: {totalCookies}";
         }
         private void ClickerUpgrade_Click(object sender, RoutedEventArgs e)
         {
             if (clickerUpgradePrice > cookieCount)
             {
                 MessageBox.Show("You don't have enough cookies to upgrade.");
+                AddToEventLog("You don't have enough cookies to buy ClickerUpgrade");
             }
             else
             {
@@ -103,6 +109,7 @@ namespace CookieClicker
                 clickerUpgradePrice *= 2; // Fordobling af prisen på clickerUpgrade
                 cookiesPerClick *= 2;
                 clickerUpgradeLevel ++;
+                AddToEventLog("You bought ClickerUpgrade!");
 
                 // Opdater UI med ny pris
                 PriceTextBlock.Text = $"Price: {clickerUpgradePrice} Cookies";
@@ -111,6 +118,7 @@ namespace CookieClicker
                 CookieCountTextBlock.Text = $"Cookies: {cookieCount}";
                 CookiesPerClickTextBlock.Text = $"Cookies per Click: {cookiesPerClick}";
                 ClickerLevelTextBlock.Text = $"Clicker Upgrade Level: {clickerUpgradeLevel}";
+                CheckLevelUp();
             }
 
         }
@@ -119,12 +127,14 @@ namespace CookieClicker
             if (cookieCount < autoClickerUpgradePrice)
             {
                 MessageBox.Show("Not enough cookies for AutoClicker Upgrade!");
+                AddToEventLog("You don't have enough cookies to buy AutoClicker");
             }
             else
             {
                 cookieCount -= autoClickerUpgradePrice;
                 autoClickerUpgradePrice *= 2;  // Fordobling af prisen ved køb
-                autoClickerUpgradeLevel++;  // Øg niveauet af opgraderinger
+                autoClickerUpgradeLevel++;  // Opdater level af upgrade
+                AddToEventLog("You bought AutoClicker!");
 
                 // Start autoClickerTimer hvis ikke allerede startet
                 if (!autoClickerTimer.IsEnabled)
@@ -136,6 +146,7 @@ namespace CookieClicker
                 AutoClickerPriceTextBlock.Text = $"Price: {autoClickerUpgradePrice} Cookies";
                 CookieCountTextBlock.Text = $"Cookies: {cookieCount}";
                 AutoClickerLevelTextBlock.Text = $"AutoClicker Upgrade Level: {autoClickerUpgradeLevel}";
+                CheckLevelUp();
 
                 // Opdater antallet af klik per sekund baseret på opgraderingsniveau
                 autoClickerTimer.Interval = TimeSpan.FromSeconds(1.0 / autoClickerUpgradeLevel);
@@ -155,6 +166,7 @@ namespace CookieClicker
             if (megaClickerUpgradePrice > cookieCount)
             {
                 MessageBox.Show("You don't have enough cookies to upgrade.");
+                AddToEventLog("You don't have enough cookies to buy MegaClick");
             }
             else
             {
@@ -162,12 +174,14 @@ namespace CookieClicker
                 cookiesPerClick += 20;
                 megaClickerUpgradePrice *= 2; // Dobbelt pris
                 megaClickerUpgradeLevel ++;
+                AddToEventLog("You bought Mega Click!");
             }
 
             CookieCountTextBlock.Text = $"Cookies: {cookieCount}";
             MegaClickerPriceTextBlock.Text = $"Price: {megaClickerUpgradePrice} Cookies";
             CookiesPerClickTextBlock.Text = $"Cookies per Click: {cookiesPerClick}";
             MegaClickerLevelTextBlock.Text = $"MegaClicker Upgrade Level: {megaClickerUpgradeLevel}";
+            CheckLevelUp();
         }
 
         // EventTimer1
@@ -227,6 +241,8 @@ namespace CookieClicker
             cookieCount += 2500;
             // Opdater cookie count
             CookieCountTextBlock.Text = $"Cookies: {cookieCount}";
+            TotalCookiesTextBlock.Text = $"Total Cookies: {totalCookies}";
+            AddToEventLog("You got 2500 cookies from the golden cookie!");
         }
         // RandomEvent2
         private void RandomEvent2_Click(object sender, RoutedEventArgs e)
@@ -236,15 +252,42 @@ namespace CookieClicker
             cookieCount += 1200;
             // Opdater cookie count
             CookieCountTextBlock.Text = $"Cookies: {cookieCount}";
+            TotalCookiesTextBlock.Text = $"Total Cookies: {totalCookies}";
+            AddToEventLog("You got 1200 cookies from the smiling cookie!");
         }
         // RandomEvent3
         private void RandomEvent3_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Oh no, this cookies is rotten! You just lost 50 cookies!");
+            MessageBox.Show("Oh no, this cookie is rotten! You just lost 50 cookies!");
             // Fjern 50 cookies
             cookieCount -= 50;
             // Opdater cookie count
             CookieCountTextBlock.Text = $"Cookies: {cookieCount}";
+            TotalCookiesTextBlock.Text = $"Total Cookies: {totalCookies}";
+            AddToEventLog("You lost 50 cookies from the rotten cookie!");
+        }
+
+        private void TotalCookiesBTN_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show($"The total amount of cookies clicked is {totalCookies}.");
+            TotalCookiesTextBlock.Text = $"Total Cookies: {totalCookies}";
+        }
+        private void AddToEventLog(string message)
+        {
+            EventLog.Items.Add($"{DateTime.Now:T}: {message}");
+            EventLog.ScrollIntoView(EventLog.Items[EventLog.Items.Count - 1]); // Auto-scroll to the latest log
+        }
+        // Check for level-up condition
+        private void CheckLevelUp()
+        {
+            // Increase level for every 1000 cookies earned
+            int newLevel = (totalCookies / 1000) + 1;
+            if (newLevel > level)
+            {
+                level = newLevel;
+                AddToEventLog($"Congratulations! You've reached Level {level}!");
+                LevelText.Text = $"Level: {level}";
+            }
         }
     }
 }
