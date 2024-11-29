@@ -17,7 +17,7 @@ namespace CookieClicker
     /// </summary>
     public partial class MainWindow : Window
     {
-        private int cookieCount = 10000;
+        private int cookieCount = 0;
         private int cookiesPerClick = 1;
         private int clickerUpgradePrice = 50;
         private int clickerUpgradeLevel = 0;

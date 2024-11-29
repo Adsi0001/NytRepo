@@ -21,3 +21,6 @@ C:\Users\Adam\Desktop\NytRepo\CookieClicker\obj\Debug\net8.0-windows\refint\Cook
 C:\Users\Adam\Desktop\NytRepo\CookieClicker\obj\Debug\net8.0-windows\CookieClicker.pdb
 C:\Users\Adam\Desktop\NytRepo\CookieClicker\obj\Debug\net8.0-windows\CookieClicker.genruntimeconfig.cache
 C:\Users\Adam\Desktop\NytRepo\CookieClicker\obj\Debug\net8.0-windows\ref\CookieClicker.dll
+C:\Users\Adam\Desktop\NytRepo\CookieClicker\bin\Debug\net8.0-windows\Assets\GoldCookie.png
+C:\Users\Adam\Desktop\NytRepo\CookieClicker\bin\Debug\net8.0-windows\Assets\RottenCookie.png
+C:\Users\Adam\Desktop\NytRepo\CookieClicker\bin\Debug\net8.0-windows\Assets\SmileyCookie.png

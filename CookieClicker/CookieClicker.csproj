@@ -10,10 +10,22 @@
 
   <ItemGroup>
     <None Remove="Assets\Cookie.jpg" />
+    <None Remove="Assets\GoldCookie.png" />
+    <None Remove="Assets\RottenCookie.png" />
+    <None Remove="Assets\SmileyCookie.png" />
   </ItemGroup>
 
   <ItemGroup>
     <Content Include="Assets\Cookie.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\GoldCookie.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\RottenCookie.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\SmileyCookie.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

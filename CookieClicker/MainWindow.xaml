@@ -187,10 +187,17 @@
             <Button
                 x:Name="RandomEvent1"
                 Click="RandomEvent1_Click"
-                Content="Klik mig!"
                 Width="80"
                 Height="80"
-                Visibility="Collapsed"/>
+                Visibility="Collapsed">
+                <Button.Content>
+                    <Image>
+                        <Image.Source>
+                            <BitmapImage UriSource="Assets/GoldCookie.png" />
+                        </Image.Source>
+                    </Image>
+                </Button.Content>
+            </Button>
         </StackPanel>
         <!-- RandomEvent2 -->
         <StackPanel
@@ -202,25 +209,38 @@
             <Button
                 x:Name="RandomEvent2"
                 Click="RandomEvent2_Click"
-                Content="Klik mig!"
                 Width="80"
                 Height="80"                
-                Visibility="Collapsed"/>                        
+                Visibility="Collapsed">
+                <Button.Content>
+                    <Image>
+                        <Image.Source>
+                            <BitmapImage UriSource="Assets/SmileyCookie.png" />
+                        </Image.Source>
+                    </Image>
+                </Button.Content>
+            </Button>
         </StackPanel>
         <!-- RandomEvent3 -->
         <StackPanel
             Grid.Row="1"
             Grid.Column="0"
             Grid.ColumnSpan="1"
-            VerticalAlignment="Top"
-            HorizontalAlignment="Right">
+            VerticalAlignment="Top">
             <Button
                 x:Name="RandomEvent3"
                 Click="RandomEvent3_Click"
-                Content="Klik mig!"
                 Width="80"
                 Height="80"
-                Visibility="Collapsed"/>
+                Visibility="Collapsed">
+                <Button.Content>
+                    <Image>
+                        <Image.Source>
+                            <BitmapImage UriSource="Assets/RottenCookie.png" />
+                        </Image.Source>
+                    </Image>
+                </Button.Content>
+            </Button>
         </StackPanel>
     </Grid>
 </Window>
